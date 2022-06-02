@@ -84,6 +84,10 @@ function drawPalette() {
   for (let i = 0; i < nColors; i ++) {
     noStroke();
     fill(colors[i]);
-    rect(i * swatchWidth, 255, swatchWidth, 50);
+    if (i == nColors - 1) {
+      rect(i * swatchWidth, 255, width - ((i - 1) * swatchWidth), 50);
+    } else {
+      rect(i * swatchWidth, 255, swatchWidth, 50);
+    }
   }
 }
